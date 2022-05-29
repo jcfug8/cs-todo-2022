@@ -10,7 +10,7 @@ flags.defineString(
 flags.defineString("mongoHost", "localhost", "the hostname for the mongo db");
 flags.defineString(
   "mongoDbName",
-  "cs-todo-2021",
+  "cs-todo-2022",
   "the name of the mongo database"
 );
 flags.parse();
