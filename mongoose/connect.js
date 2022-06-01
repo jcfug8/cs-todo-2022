@@ -3,6 +3,7 @@ const db = mongoose.connection;
 
 function connect(user, password, host, db_name) {
   let connectionString = `mongodb://${user}:${password}@${host}/${db_name}`;
+  console.log(connectionString);
   mongoose
     .connect(connectionString, {
       useNewUrlParser: true,
