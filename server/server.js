@@ -24,7 +24,6 @@ server.get("/todo/:id", (req, res) => {
 });
 
 server.get("/todos", (req, res) => {
-  console.log("hi");
   Todo.find()
     .then((todos) => {
       res.json(todos);
