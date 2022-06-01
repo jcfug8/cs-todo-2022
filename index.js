@@ -1,7 +1,6 @@
 const { connect, onConnect } = require("./mongoose/connect.js");
 const server = require("./server/server");
 const flags = require("./flags");
-const server = require("./server/server");
 
 // set up on connect
 onConnect(function () {
