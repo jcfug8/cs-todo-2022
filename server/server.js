@@ -1,15 +1,13 @@
 const express = require("express");
 const cors = require("cors");
-const fs = require("fs");
-const { update } = require("../mongoose/model");
 const server = express();
 
 const Todo = require("../mongoose/model");
 const { setupTodo } = require("./server-helpers");
 
-server.use(cors());
-server.use(express.json({}));
-server.use(express.static(`${__dirname}/public/`));
+// server.use(cors());
+// server.use(express.json({}));
+// server.use(express.static(`${__dirname}/public/`));
 
 server.get("/todo/:id", (req, res) => {
   Todo.findById(req.params.id)
@@ -26,6 +24,7 @@ server.get("/todo/:id", (req, res) => {
 });
 
 server.get("/todos", (req, res) => {
+  console.log("hi");
   Todo.find()
     .then((todos) => {
       res.json(todos);
@@ -79,4 +78,4 @@ server.patch("/todo/:id", (req, res) => {
     });
 });
 
-module.exports = server.listen;
+module.exports = server;
