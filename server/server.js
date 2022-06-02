@@ -5,8 +5,8 @@ const server = express();
 const Todo = require("../mongoose/model");
 const { setupTodo } = require("./server-helpers");
 
-// server.use(cors());
-// server.use(express.json({}));
+server.use(cors());
+server.use(express.json({}));
 // server.use(express.static(`${__dirname}/public/`));
 
 server.get("/todo/:id", (req, res) => {
