@@ -50,6 +50,22 @@ server.post("/todo", (req, res) => {
     });
 });
 
+server.delete("/todo/:id", (req, res) => {
+  // validate and default the params in the body
+  let todoReqData = setupTodo(req.body);
+  Todo.findByIdAndDelete(req.params.id)
+    .then((todo) => {
+      if (todo == null) {
+        res.status(404).json({ message: "Todo not found" });
+        return;
+      }
+      res.json(todo);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
 server.put("/todo/:id", (req, res) => {
   // validate and default the params in the body
   let todoReqData = setupTodo(req.body);
