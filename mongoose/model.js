@@ -5,6 +5,7 @@ const todoSchema = mongoose.Schema({
   description: { type: String },
   done: { type: Boolean, default: false },
   deadline: { type: Date, default: new Date() },
+  tags: { type: [String], default: [] },
 });
 
 const Todo = mongoose.model("Todo", todoSchema);

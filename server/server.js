@@ -23,6 +23,10 @@ server.get("/todo/:id", (req, res) => {
     });
 });
 
+server.get("/tags", (req, res) => {
+  res.json(["school", "chore", "family", "work", "home", "errand", "other"]);
+});
+
 server.get("/todos", (req, res) => {
   Todo.find()
     .then((todos) => {

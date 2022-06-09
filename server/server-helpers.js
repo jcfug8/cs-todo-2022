@@ -12,6 +12,7 @@ setupTodo = function (todoReq) {
     description: todoReq.description || "",
     done: done,
     deadline: deadline,
+    tags: todoReq.tags || [],
   };
 };
 
